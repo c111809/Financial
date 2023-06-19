@@ -19,7 +19,6 @@ from django.urls import path
 from app import views
 from django.contrib.auth.views import LogoutView
 
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('login/', views.login_view, name='login'),

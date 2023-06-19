@@ -1,25 +1,26 @@
-{#{% block content %}#}
-{#  <h2>Register</h2>#}
-{#  <form method="post">#}
-{#    {% csrf_token %}#}
-{#    {{ form.as_p }}#}
-{#    <label for="yqm">邀请码:</label>#}
-{#    <input type="text" id="invite_code" name="invite_code">#}
-{#    <br>#}
-{#    <button type="submit">Register</button>#}
-{#  </form>#}
-{#{% endblock %}#}
-
-{% block content %}
-  <h2>Register</h2>
-  <form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <div class="form-group">
-      <label for="{{ form.invite_code.id_for_label }}">Invite Code:</label>
-      <input type="text" id="invite_code" name="invite_code">
-         {{ form.invite_code }}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>注册</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-3">
+        <h2>注册</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div class="form-group">
+                <label for="{{ form.invite_code.id_for_label }}">邀请码：</label>
+                <input type="text" id="invite_code" name="invite_code" class="form-control">
+                {{ form.invite_code }}
+            </div>
+            <button type="submit" class="btn btn-primary">注册</button>
+        </form>
     </div>
-    <button type="submit" class="btn btn-primary">Register</button>
-  </form>
-{% endblock %}
+</body>
+</html>
+
